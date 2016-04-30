@@ -1,0 +1,108 @@
+/**
+	简单的jplayer弹幕插件
+	by reece
+	2016.04.30
+*/
+
+/*SCREEN START*/
+#showDm {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+	z-index: 4;
+}
+
+.playerImg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.playerVideo {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+#showDm div {
+	font-size: 22px;
+	line-height: 36px;
+	color: #fff;
+	position: absolute;
+	white-space:nowrap;   
+	word-break:keep-all;  
+	text-shadow: rgb(0, 0, 0) 0px 0px 2px; 
+	opacity: 1;
+	font-weight: bold; 
+	font-family: SimHei;
+}
+/*SCREEN END*/
+
+/*SEND START*/
+.playerSend {
+	width: 100%;
+	height: 76px;
+	position: relative;
+	bottom: 50%;
+	left: 0;
+	display: none;
+	z-index: 5;
+}
+
+.playerSend .sendBackground {
+	width: 100%;
+	height: 76px;
+	background: #000;
+	position: bottom:0;
+	left: 0;
+	opacity: 0.8;
+	filter: alpha(opacity = 80);
+}
+
+.playerSend .playerSendContainer {
+	width: 100%;
+	height: 76px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	text-align: center;
+	line-height: 76px;
+	padding: 10px;
+}
+
+.playerSend .playerSendContainer 
+ 			  .playerSendtxt {
+	margin-top: 10px;
+	width: 50%;
+	height: 36px;
+	border-radius: 4px 0 0 4px;
+	border: 1px solid #5bba32;
+	outline: none;
+}
+
+.playerSend .playerSendContainer .playerSendBtn {
+	width: 20%;
+	height: 36px;
+	
+	border-radius: 4px 0 0 4px;
+	border: 1px solid #5bba32;
+	outline: none;
+	font-size: 17px;
+	color: #fff;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	background: #65c33d;
+	text-align: center;
+}
+
+.playerSend .playerSendContainer .playerSendBtn:hover {
+	background: #3eaf0e;
+}
+
+/*SEND END*/

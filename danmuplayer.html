@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<!-- Website Design By: www.happyworm.com -->
+<title>Demo danmu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="skin/pink.flag/jplayer.pink.flag.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="dist/jplayer-plugin/css/style.css" />
+<script type="text/javascript" src="dist/jpalyer/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="dist/jpalyer/jquery.jplayer.min.js	"></script>
+<script type="text/javascript" src="dist/jplayer-plugin/js/jplayer.plugin.danmu.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function () {
+			$(this).jPlayer("setMedia", {
+				m4v: "http://112.253.22.156/13/e/x/d/x/exdxdkwirkxdscusebizdjzhubnklh/hc.yinyuetai.com/601D012C6850E17825FC4C97B2373009.flv?sc=421c45f0d11fa6b5&br=738",
+				ogv: "http://112.253.22.156/13/e/x/d/x/exdxdkwirkxdscusebizdjzhubnklh/hc.yinyuetai.com/601D012C6850E17825FC4C97B2373009.flv?sc=421c45f0d11fa6b5&br=738",
+				webmv: "http://112.253.22.156/13/e/x/d/x/exdxdkwirkxdscusebizdjzhubnklh/hc.yinyuetai.com/601D012C6850E17825FC4C97B2373009.flv?sc=421c45f0d11fa6b5&br=738",
+				poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+			});
+		},
+		play: function() { // To avoid multiple jPlayers playing together.
+			$(this).jPlayer("pauseOthers");
+		},
+		swfPath: "js",
+		supplied: "webmv, ogv, m4v",
+		smoothPlayBar: true,
+		keyEnabled: true
+	});
+	//测试 START
+	var lists = new Array()
+	var maxDanmu = 1000;
+	var str = '弹幕测试我是谁啊哈哈在哪啊你说什么';
+	for(var i = 0; i < maxDanmu; i++){
+		var min = parseInt(Math.random()*60).toString();
+		if(min.length == 1){
+			min = '0'+min;
+		}
+		
+		lists.push({
+			postTime: '0'+parseInt(Math.random()*3)+':'+min, 
+			content:str.slice((i%str.length),parseInt(Math.random()*str.length))});
+	}
+	
+	$.fn.simpleDanmu.initDanmu({
+		objectId:"jquery_jplayer_1",
+		list:lists,
+		postData:postData
+	});
+	function postData(){
+		//
+	}
+	//测试 END
+	
+});
+//]]>
+</script>
+</head>
+<body>
+		<div id="jp_container_1" class="jp-video jp-video-270p">
+						<div class="jp-type-single">
+							<div id="jquery_jplayer_1" class="jp-jplayer">
+								
+							</div>
+							<div class="jp-gui">
+								<div class="jp-video-play">
+									<a href="javascript:;" class="jp-video-play-icon" tabindex="1">播放</a>
+								</div>
+								<div class="jp-interface">
+									<div class="jp-progress">
+										<div class="jp-seek-bar">
+											<div class="jp-play-bar"></div>
+										</div>
+									</div>
+									<div class="jp-current-time"></div>
+									<div class="jp-duration"></div>
+									<div class="jp-title">
+										<ul>
+											<li>播放器</li>
+										</ul>
+									</div>
+									<div class="jp-controls-holder">
+										<ul class="jp-controls">
+											<li><a href="javascript:;" class="jp-play" tabindex="1"
+												title="播放">播放</a>
+											</li>
+											<li><a href="javascript:;" class="jp-pause" tabindex="1"
+												title="暂停">暂停</a>
+											</li>
+											<li><a href="javascript:;" class="jp-stop" tabindex="1"
+												title="停止">停止</a>
+											</li>
+											<li><a href="javascript:;" class="jp-mute" tabindex="1"
+												title="静音">锁定</a>
+											</li>
+											<li><a href="javascript:;" class="jp-unmute"
+												tabindex="1" title="取消静音">解锁</a>
+											</li>
+											<li><a href="javascript:;" class="jp-volume-max"
+												tabindex="1" title="最大音量">最大音量</a>
+											</li>
+										</ul>
+										<div class="jp-volume-bar">
+											<div class="jp-volume-bar-value"></div>
+										</div>
+
+										<ul class="jp-toggles">
+											<li><a href="javascript:;" class="jp-full-screen"
+												tabindex="1" title="全屏">全屏</a>
+											</li>
+											<li><a href="javascript:;" class="jp-restore-screen"
+												tabindex="1" title="恢复屏幕">恢复屏幕</a>
+											</li>
+											<li><a href="javascript:;" class="jp-repeat"
+												tabindex="1" title="重复">重复</a>
+											</li>
+											<li><a href="javascript:;" class="jp-repeat-off"
+												tabindex="1" title="结束重复">结束重复</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="jp-no-solution">
+								<span>请更新您的flash插件</span> 请更新您的flash插件 <a
+									href="http://get.adobe.com/flashplayer/" target="_blank">点击更新</a>.
+							</div>
+						</div>
+					</div>
+		
+</body>
+
+</html>
