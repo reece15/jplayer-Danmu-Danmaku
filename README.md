@@ -27,8 +27,8 @@
 
 ##预览
 
-	![](view/view01.jpg)
-	![](view/view02.jpg)
+![](view/view01.jpg)
+![](view/view02.jpg)
 	
 ##其他 and 注释	   
 
