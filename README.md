@@ -9,10 +9,10 @@
 	- 需要 jquery库
 	- 需要 jplayer库
 ##引入方法
-	- 需要引入的脚本
+	需要引入的脚本
 		/dist/jplayer-plugin/jplayer.plugin.danmu.js
 		/dist/jplayer-plugin/style.css
-	- jplayer初始化后需要调用的函数
+	jplayer初始化后需要调用的函数
 		$.fn.simpleDanmu.initDanmu({
 			objectId:"jquery_jplayer_id",	//播放器id
 			list:{{content:"",postTime:"00:00"}}, //弹幕数组
