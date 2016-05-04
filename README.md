@@ -9,17 +9,18 @@
 	- 需要 jquery库
 	- 需要 jplayer库
 ##引入方法
-	需要引入的脚本
+	- 需要引入的脚本
 		/dist/jplayer-plugin/jplayer.plugin.danmu.js
 		/dist/jplayer-plugin/style.css
-	jplayer初始化后需要调用的函数
-		$.fn.simpleDanmu.initDanmu({
-			objectId:"jquery_jplayer_id",	//播放器id
+	- jplayer初始化后需要调用的函数
+		$('#jplayerid').danmuPlayer({
 			list:{{content:"",postTime:"00:00"}}, //弹幕数组
-			postData:function(){
+			postData:function(danmu){
 				//和服务器通信的函数
 			}
 		});
+	- 发送弹幕
+		$('#jplayerid').sendDanmu('ok');
 
 ##使用方法:
 
@@ -43,12 +44,11 @@
  * config:{
  * 		time:int,//弹幕运动时间 默认5000ms
 		timeout:int,//弹幕多次点击间隔 默认3000ms
-		objectId:String,//播放器的id,将通过此id选择播放器 //必须
 		postData:CallBack,//一个提交数据到服务器的函数，不做封装 //非必须
 		list:danmus,//danmu数组 必须
  * }
- * function initDanmu(config) 初始化弹幕环境
- * function biubiubiu(content) 将弹幕发射到屏幕
- * function send 将弹幕发射到屏幕且发送到服务器
+ * function danmuPlayer(option) 初始化弹幕环境
+ * function biubiubiu($player,content) 将弹幕发射到播放器
+ * function sendDanmu(content) 将弹幕发射到屏幕且发送到服务器 
  * 
- */
+ *

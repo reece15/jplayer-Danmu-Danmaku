@@ -45,14 +45,10 @@ $(document).ready(function(){
 			content:str.slice((i%str.length),parseInt(Math.random()*str.length))});
 	}
 	
-	$.fn.simpleDanmu.initDanmu({
-		objectId:"jquery_jplayer_1",
+	$("#jquery_jplayer_1").danmuPlayer({
 		list:lists,
-		postData:postData
 	});
-	function postData(){
-		//
-	}
+
 	//测试 END
 	
 });
